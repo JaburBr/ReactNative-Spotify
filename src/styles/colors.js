@@ -1,4 +1,3 @@
-import Color from 'color';
 
 export default {
 
@@ -11,7 +10,6 @@ export default {
   black: '#000',
 
   primary: '#111',
-  primaryDark: Color('#6550B7').darken(0.1),
   secundary: '#222',
   success: '#9DCA83',
   danger: '#E37A7A',
