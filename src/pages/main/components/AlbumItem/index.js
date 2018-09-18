@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from './styles';
+import PropTypes from 'prop-types'
 
 const AlbumItem = ({ album }) => (
   <TouchableOpacity onPress={() => { }} style={styles.container}>
@@ -13,5 +14,13 @@ const AlbumItem = ({ album }) => (
     <Icon name='more-horiz' size={24} style={styles.more} />
   </TouchableOpacity>
 );
+
+AlbumItem.propTypes = {
+  album: PropTypes.shape({
+    thumbnail: PropTypes.string,
+    title: PropTypes.string,
+    author: PropTypes.string,
+  }).isRequired,
+}
 
 export default AlbumItem;
