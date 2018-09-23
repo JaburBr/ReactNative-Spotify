@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
 
+  loading:{
+    marginTop: metrics.basePadding,
+  },
+
 });
 
 export default styles;
