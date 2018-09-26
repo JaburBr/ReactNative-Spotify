@@ -37,12 +37,7 @@ class Main extends Component {
     }).isRequired
   };
 
-
-
   render() {
-
-    console.tron.log(this.props);
-
     return (
       <View style={styles.container}>
         <StatusBar barStyle='light-content' />
@@ -57,7 +52,6 @@ class Main extends Component {
             )}
           />
         }
-
 
       </View>
     );
