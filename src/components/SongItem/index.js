@@ -22,14 +22,10 @@ const SongItem = ({ song, player, setSongRequest }) => (
       <Text style={styles.author} >{song.author}</Text>
     </View>
 
-    {console.tron.log(player)}
-
     {player.loadingId === song.id
       ? <ActivityIndicator size='small' color='#999' style={styles.loading} />
       : <Icon name='play-circle-outline' size={24} style={styles.play} />
     }
-
-
   </TouchableOpacity>
 );
 
