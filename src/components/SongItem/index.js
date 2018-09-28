@@ -3,14 +3,12 @@ import { Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import PropTypes from 'prop-types';
 
-import { Creators as PlayerActions } from '../../store/ducks/player';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import styles from './styles';
 
-const SongItem = ({ song, player, setSongRequest }) => (
-  <TouchableOpacity style={styles.container} onPress={() => { setSongRequest(song); }} >
+const SongItem = ({ song, player, onPress }) => (
+  <TouchableOpacity style={styles.container} onPress={onPress} >
     <View style={styles.info} >
       <Text
         style={[
@@ -37,15 +35,13 @@ SongItem.propTypes = {
   player: PropTypes.shape({
     loadingId: PropTypes.number,
   }).isRequired,
-  setSongRequest: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   player: state.player,
 });
 
-const mapDispatchToProps = dispatch => (
-  bindActionCreators(PlayerActions, dispatch)
-);
 
-export default connect(mapStateToProps, mapDispatchToProps)(SongItem);
+
+export default connect(mapStateToProps)(SongItem);
